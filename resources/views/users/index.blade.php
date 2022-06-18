@@ -6,6 +6,8 @@
 
 <h1>Listagem de usuários</h1>
 
+<h3><a href="{{ route('users.create') }}">Criar novo usuário</a></h3>
+
 <ul>
     @foreach ($users as $user)
 
