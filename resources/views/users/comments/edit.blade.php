@@ -5,7 +5,7 @@
 @section('content')
 
     <h1 class="font-bold">Editar Comentário do usuário {{ $user->name }}</h1>
-
+    
     @include('includes.validations-form')
 
     <form action="{{ route('comments.update', $comment->id) }}" method="post">
