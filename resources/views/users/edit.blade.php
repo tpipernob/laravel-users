@@ -8,7 +8,7 @@
 
     @include('includes.validations-form')
 
-    <form action="{{ route('users.update', $user->id) }}" method="post">
+    <form action="{{ route('users.update', $user->id) }}" method="post" enctype="multipart/form-data">
         @method('PUT')
         @include('users._partials.form')
         <button class="text-sm bg-blue-500 px-5 py-2 rounded text-white shadow hover:bg-blue-600" type="submit">
