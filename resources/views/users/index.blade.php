@@ -45,7 +45,7 @@
                     <td class="px-6 py-4">
                         <a href="{{ route('users.show', $user->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detalhes</a> |
                         <a href="{{ route('users.edit', $user->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a> |
-                        <a href="{{ route('comments.index', $user->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Comentários (0)</a>
+                        <a href="{{ route('comments.index', $user->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Comentários ({{ $user->comments->count() }})</a>
                     </td>
                 </tr>
                 @endforeach
