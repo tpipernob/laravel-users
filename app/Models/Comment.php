@@ -19,6 +19,7 @@ class Comment extends Model
         'visible' => 'boolean'
     ];
 
+
     public function user()
     {
         return $this->belongsTo(User::class);
