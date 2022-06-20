@@ -52,7 +52,7 @@ class User extends Authenticatable
 
         })
         ->with('comments') #já trás os comentários
-        ->get();
+        ->paginate(2);
 
         return $users;
     }
