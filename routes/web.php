@@ -7,9 +7,11 @@ use App\Http\Controllers\Admin\CommentController;
 use App\Models\Comment;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/users/{id}/create', [CommentController::class, 'create']) -> name('comments.create');
 Route::post('/users/{id}/comments', [CommentController::class, 'store']) -> name('comments.store');
 Route::get('/users/{id}/comments', [CommentController::class, 'index']) -> name('comments.index');
-Route::get('/users/{id}/create', [CommentController::class, 'create']) -> name('comments.create');
+Route::get('/users/{userId}/comments/{id}', [CommentController::class, 'edit']) -> name('comments.edit');
+Route::put('/users/comments/{id}', [CommentController::class, 'update']) -> name('comments.update');
 
 
 Route::delete('/users/{id}', [UserController::class, 'destroy']) -> name('users.destroy');
