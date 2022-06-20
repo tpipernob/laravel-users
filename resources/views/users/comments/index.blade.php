@@ -20,7 +20,7 @@
 
 
 
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-4">
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-4 mb-8">
         <table class="w-full text-sm text-left text-gray-500">
             <thead class="text-xs text-gray-700 uppercase bg-sky-100">
                 <tr>
@@ -41,11 +41,11 @@
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                         {{ $comment->body }}
                     </th>
+
                     <td class="px-6 py-4">
-                        {{ $comment->visible }}
+                        {{ $comment->visible ? 'SIM' : 'NÃO' }}
                     </td>
                     <td class="px-6 py-4">
-                        <a href="{{ route('users.show', $user->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detalhes</a> |
                         <a href="{{ route('users.edit', $user->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
                     </td>
                 </tr>
@@ -54,6 +54,9 @@
         </table>
     </div>
 
-
+    <a href="{{ route('comments.create', $user->id) }}"
+        class="text-sm bg-blue-500 px-5 py-2 rounded text-white shadow hover:bg-blue-600 mt-4">
+        Criar comentário
+    </a>
 
 @endsection
